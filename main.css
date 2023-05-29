@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /* app */
 
 /* header */
@@ -11,6 +15,11 @@
   background-color: #fff;
   border-bottom: 1px solid #dddddd;
   height: 52px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
 .page-wrapper {
@@ -34,6 +43,13 @@
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
+}
+.header-nav-left {
+  padding-right: 68px;
+}
+
+.header-nav-left i {
+  font-size: 30px;
 }
 
 /* nav*/
@@ -112,7 +128,7 @@
 }
 
 .main {
-  margin: auto;
+  margin-top: 100px;
 }
 
 .content {
@@ -161,6 +177,12 @@
   padding: 15px 0;
   border-bottom: 1px solid #dedede;
 }
+.item-left li:nth-child(1) {
+  padding: 0 0 15px 0;
+}
+.item-left li:nth-child(5) {
+  border-bottom: none;
+}
 
 .item-left p {
   margin: 4px 0 0 8px;
@@ -198,7 +220,7 @@
   color: #006ba0;
 }
 
-.item-right img {
+.itemright-img {
   width: 100%;
   height: 297px;
 }
@@ -217,6 +239,19 @@
   font-size: 16px;
   color: #000;
 }
+.subitem-ul {
+  display: flex;
+}
+.subitem-ul li {
+  padding: 0 12px;
+  list-style: none;
+}
+
+.subitem-img {
+  width: 190px;
+  height: 126px;
+  object-fit: cover;
+}
 
 .item-heading {
   font-size: 32px;
@@ -232,20 +267,30 @@
   cursor: pointer;
 }
 
-.section-right li {
+.section-right-ul1 li,
+.section-right-ul2 li {
   list-style: none;
 }
 
-.section-right li:hover {
+.section-right-ul1 a:hover,
+.section-right-ul2 a:hover {
   color: #006ba0;
 }
 
-.section-right h4 {
+.section-right-ul1 p,
+.section-right-ul2 p {
   margin: 10px 0 25px;
   line-height: 1.4;
 }
+.section-right-ul1 a,
+.section-right-ul2 a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
 
-.section-right img {
+.section-right-ul1 img,
+.section-right-ul2 img {
   width: 234px;
   height: 156px;
 }
@@ -254,7 +299,6 @@
 
 .section-multimedia {
   width: 100%;
-  height: 533px;
   background-color: #ffde76;
   cursor: pointer;
   margin-bottom: 40px;
@@ -270,6 +314,19 @@
   color: #000;
   font-weight: 600;
   cursor: text;
+  position: relative;
+}
+.section-heading h3::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  top: 1px;
+  bottom: 3px;
+  left: -20px;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  transform: skew(-20deg);
+  background-color: #dd3333;
 }
 
 .section-heading ul {
@@ -358,42 +415,48 @@
   padding-bottom: 10px;
   margin: 0 0 20px 13px;
 }
-.section-header h3 {
+.section-content h3 {
   cursor: pointer;
   font-size: 20px;
   text-transform: uppercase;
 }
 
-.section-content img {
+.section-content-ul1 img,
+.section-content-ul2 img {
   width: 100%;
   height: 121px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  object-fit: cover;
 }
 
-.section-content ul {
+.section-content-ul1,
+.section-content-ul2 {
   display: flex;
   align-items: center;
   justify-content: center;
   list-style: none;
 }
 
-.section-content li {
+.section-content-ul1 li,
+.section-content-ul2 li {
   margin: 0 10px;
   width: 184px;
-  height: 201px;
+  min-height: 201px;
   border: 1px solid #dddddd;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
 
-.section-content p {
+.section-content-ul1 p,
+.section-content-ul2 p {
   font-size: 16px;
   line-height: 1.2;
   padding: 10px;
 }
 
-.section-content p:hover {
+.section-content-ul1 p:hover,
+.section-content-ul2 p:hover {
   color: #006ba0;
 }
 
@@ -670,25 +733,29 @@
   padding-left: 21px;
 }
 
-.section-layout-right li {
+.section-layout-right-ul1 li,
+.section-layout-right-ul2 li {
   display: flex;
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid #eeeeee;
 }
 
-.section-layout-right img {
+.section-layout-right-ul1 img,
+.section-layout-right-ul2 img {
   width: 72px;
   height: 72px;
   object-fit: cover;
   border-radius: 4px;
 }
 
-.section-layout-right p {
+.section-layout-right-ul1 p,
+.section-layout-right-ul2 p {
   padding-right: 42px;
 }
 
-.section-layout-right p:hover {
+.section-layout-right-ul1 p:hover,
+.section-layout-right-ul2 p:hover {
   color: #006ba0;
 }
 
@@ -707,6 +774,12 @@
   justify-content: center;
   list-style: none;
   cursor: pointer;
+}
+
+/* layout-item-sub */
+.layout-item-sub {
+  display: flex;
+  justify-content: space-between;
 }
 
 .section-layout li {
@@ -764,6 +837,7 @@
 .layout-ul li {
   display: flex;
   margin: 0;
+  height: 90px;
 }
 
 .layout-ul li:nth-child(1) {
