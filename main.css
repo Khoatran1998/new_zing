@@ -8,7 +8,10 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* app */
+.app {
+  overflow-x: hidden;
+  overflow: hidden;
+}
 
 /* header */
 .header {
@@ -23,7 +26,6 @@ html {
 }
 
 .page-wrapper {
-  padding: 0 124px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -129,11 +131,13 @@ html {
 
 .main {
   margin-top: 100px;
+  overflow: hidden;
+  overflow-x: none;
 }
 
 .content {
-  width: 1025px;
   margin: auto;
+  overflow: hidden;
 }
 
 /* section title */
@@ -703,6 +707,7 @@ html {
 .layout-left img {
   width: 456px;
   height: 304px;
+  object-fit: cover;
 }
 
 .sub-layout-left img {
@@ -774,12 +779,14 @@ html {
   justify-content: center;
   list-style: none;
   cursor: pointer;
+  width: 1025px;
 }
 
 /* layout-item-sub */
 .layout-item-sub {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .section-layout li {
@@ -973,12 +980,14 @@ html {
 
 .sub-content-list {
   display: flex;
+  overflow-x: hidden;
 }
 
 .sub-content-item1 {
   width: 700px;
   height: 393px;
   padding-right: 10px;
+  overflow: hidden;
 }
 
 .sub-content-item1 video {
